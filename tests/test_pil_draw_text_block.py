@@ -28,4 +28,29 @@ class TestPILDrawText(NIOBlockTestCase):
                          type(self.last_notified['default'][0].image))
         self.assertEqual((64, 48),
                          self.last_notified['default'][0].image.size)
-        # TODO: figure out how to mock ImageDraw and check that it's called correctly
+        # TODO: figure out how to mock ImageDraw and check that it's called
+        # TODO: figure out how to inspect that PIL Image was drawn to
+
+    def test_signal_without_image_attr(self):
+        ''' Signal passes through the block unmodified '''
+        blk = PILDrawText()
+        self.configure_block(blk, {})
+        blk.start()
+        blk.process_signals([Signal()])
+        blk.stop()
+        self.assert_num_signals_notified(1)
+        self.assertEqual([],
+                         list(self.last_notified['default'][0].to_dict().keys()))
+
+    def test_signal_without_image_object(self):
+        ''' Signal passes through the block unmodified '''
+        blk = PILDrawText()
+        self.configure_block(blk, {})
+        blk.start()
+        blk.process_signals([Signal({'image': 'not an Image object'})])
+        blk.stop()
+        self.assert_num_signals_notified(1)
+        self.assertEqual(['image'],
+                         list(self.last_notified['default'][0].to_dict().keys()))
+        self.assertEqual('not an Image object',
+                         self.last_notified['default'][0].image)

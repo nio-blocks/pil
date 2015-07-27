@@ -24,20 +24,35 @@ class PILDrawText(Block):
 
     def process_signals(self, signals, input_id='default'):
         for signal in signals:
-            self._draw_text(signal)
+            try:
+                self._draw_text(signal)
+            except:
+                self._logger.exception('Failed to draw text to image')
         self.notify_signals(signals, output_id='default')
 
     def _draw_text(self, signal):
         """ Edits the Image object in signal.image by drawing text to it """
         self._logger.debug('Create Draw object')
-        draw = ImageDraw.Draw(signal.image)
+        image = self._get_image(signal)
+        draw = ImageDraw.Draw(image)
         font = ImageFont.load_default()
         try:
             text = self.text(signal)
             x = int(self.coordinate.x(signal))
             y = int(self.coordinate.y(signal))
         except:
-            self._logger.exception('Failed to evaluate properties')
-        self._logger.debug('Draw text: {} at location: {}, {}'.format(text, x, y))
+            raise Exception('Failed to evaluate block properties')
+        self._logger.debug(
+            'Draw text: {} at location: {}, {}'.format(text, x, y))
         draw.text((x, y), text, font=font, fill=255)
         self._logger.debug('Done drawing text: {}'.format(signal.image))
+
+    def _get_image(self, signal):
+        try:
+            image = signal.image
+        except:
+            raise Exception('Signal does not containg attribute `image`')
+        if type(image) == Image.Image:
+            return image
+        else:
+            raise Exception('`image` needs to be a PIL Image')
