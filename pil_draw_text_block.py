@@ -48,11 +48,9 @@ class PILDrawText(Block):
         self._logger.debug('Done drawing text: {}'.format(signal.image))
 
     def _get_image(self, signal):
-        try:
-            image = signal.image
-        except:
+        if not hasattr(signal, 'image'):
             raise Exception('Signal does not containg attribute `image`')
-        if type(image) == Image.Image:
-            return image
-        else:
+        elif not isinstance(signal.image, Image.Image):
             raise Exception('`image` needs to be a PIL Image')
+        else:
+            return signal.image
