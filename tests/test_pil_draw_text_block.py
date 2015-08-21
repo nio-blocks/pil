@@ -45,6 +45,20 @@ class TestPILDrawText(NIOBlockTestCase):
         self.assertEqual(mock_draw_obj.text.call_args[1]['fill'], 255)
 
     @patch(PILDrawText.__module__ + '.ImageDraw.Draw')
+    def test_invalid_text(self, mock_draw):
+        ''' Test that text is converted to string before drawing it '''
+        mock_draw_obj = MagicMock()
+        mock_draw.return_value = mock_draw_obj
+        blk = PILDrawText()
+        self.configure_block(blk, {"text": "{{ 42 }}"})
+        blk.start()
+        blk.process_signals([Signal({'image': Image.new('1', (64, 48))})])
+        blk.stop()
+        self.assert_num_signals_notified(1)
+        self.assertEqual(((0, 0), '42'),
+                         mock_draw_obj.text.call_args[0])
+
+    @patch(PILDrawText.__module__ + '.ImageDraw.Draw')
     def test_signal_without_image_attr(self, mock_draw):
         ''' Signal passes through the block unmodified '''
         blk = PILDrawText()

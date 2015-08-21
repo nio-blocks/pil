@@ -37,7 +37,7 @@ class PILDrawText(Block):
         draw = ImageDraw.Draw(image)
         font = ImageFont.load_default()
         try:
-            text = self.text(signal)
+            text = str(self.text(signal))
             x = int(self.coordinate.x(signal))
             y = int(self.coordinate.y(signal))
         except:
