@@ -1,0 +1,17 @@
+{
+  "nio/PILDrawText": {
+    "Language": "Python",
+    "Version": "1.0.0",
+    "Reference": "github.com/nio-blocks/pil.git@v1.0.0"
+  },
+  "nio/PILOpenFile": {
+    "Language": "Python",
+    "Version": "1.0.0",
+    "Reference": "github.com/nio-blocks/pil.git@v1.0.0"
+  },
+  "nio/PILNewImage": {
+    "Language": "Python",
+    "Version": "1.0.0",
+    "Reference": "github.com/nio-blocks/pil.git@v1.0.0"
+  }
+}
