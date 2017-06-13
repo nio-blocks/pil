@@ -1,51 +1,54 @@
 {
-  "nio/PILDrawText": {
-    "Output": "Same list of signals as input.",
-    "Dependencies": [
-      "-   [**Pillow**](https://pypi.python.org/pypi/Pillow)"
-    ],
-    "Version": "1.0.0",
-    "Category": "SignalInspection",
-    "Properties": {
-      "cooridinate": {
-        "description": "x, y cooridinate to start text",
-        "type": "expression"
-      },
-      "text": {
-        "description": "text to draw to image",
-        "type": "expression"
-      }
+    "nio/PILDrawText": {
+        "Properties": {
+            "text": {
+                "type": "expression",
+                "description": "text to draw to image"
+            },
+            "cooridinate": {
+                "type": "expression",
+                "description": "x, y cooridinate to start text"
+            }
+        },
+        "Category": "SignalInspection",
+        "Description": "Draw text to an existing PIL Image",
+        "Input": {
+            "Description": "Any list of signals."
+        },
+        "Version": "1.0.0",
+        "Output": {
+            "Description": "Same list of signals as input."
+        },
+        "Commands": {}
     },
-    "Commands": {},
-    "Input": "Any list of signals.",
-    "Description": "Draw text to an existing PIL Image"
-  },
-  "nio/PILOpenFile": {
-    "Output": "Same list of signals as input, with the added *image* attribute.",
-    "Category": "SignalInspection",
-    "Dependencies": [
-      "-   [**Pillow**](https://pypi.python.org/pypi/Pillow)"
-    ],
-    "Version": "1.0.0",
-    "Properties": {
-      "None": {
-        "description": "None"
-      }
+    "nio/PILNewImage": {
+        "Properties": {},
+        "Category": "SignalInspection",
+        "Description": "Create a new PIL Image and store it in the *image* attribute of the input signal.",
+        "Input": {
+            "Description": "Any list of signals."
+        },
+        "Version": "1.0.0",
+        "Output": {
+            "Description": "Same list of signals as input, with the added *image* attribute."
+        },
+        "Commands": {}
     },
-    "Commands": {},
-    "Input": "Any list of signals.",
-    "Description": "Load and image file from disk and create a new PIL Image and store it in the *image* attribute of the input signal."
-  },
-  "nio/PILNewImage": {
-    "Output": "Same list of signals as input, with the added *image* attribute.",
-    "Category": "SignalInspection",
-    "Dependencies": [
-      "-   [**Pillow**](https://pypi.python.org/pypi/Pillow)"
-    ],
-    "Description": "Create a new PIL Image and store it in the *image* attribute of the input signal.",
-    "Version": "1.0.0",
-    "Properties": {},
-    "Input": "Any list of signals.",
-    "Commands": {}
-  }
+    "nio/PILOpenFile": {
+        "Properties": {
+            "None": {
+                "description": "None"
+            }
+        },
+        "Category": "SignalInspection",
+        "Description": "Load and image file from disk and create a new PIL Image and store it in the *image* attribute of the input signal.",
+        "Input": {
+            "Description": "Any list of signals."
+        },
+        "Version": "1.0.0",
+        "Output": {
+            "Description": "Same list of signals as input, with the added *image* attribute."
+        },
+        "Commands": {}
+    }
 }
