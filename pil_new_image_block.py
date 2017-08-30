@@ -1,4 +1,5 @@
 from PIL import Image
+
 from nio.block.base import Block
 from nio.properties import IntProperty, VersionProperty, \
         ObjectProperty, PropertyHolder

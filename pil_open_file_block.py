@@ -1,8 +1,7 @@
-from os.path import join, dirname, realpath, isfile
 from PIL import Image
+
 from nio.block.base import Block
-from nio.properties import FileProperty
-from nio.properties import VersionProperty
+from nio.properties import FileProperty, VersionProperty
 
 
 class PILOpenFile(Block):
