@@ -62,7 +62,7 @@ Load and image file from disk and create a new PIL Image and store it in the *im
 
 Properties
 ----------
-- **file**: 
+- **file**: Location of image file to open
 
 Inputs
 ------
