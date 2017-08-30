@@ -1,74 +1,52 @@
-PILNewImage
-===========
-
-Create a new PIL Image and store it in the *image* attribute of the input signal.
-
-Properties
-----------
-None
-
-Dependencies
-------------
--   [**Pillow**](https://pypi.python.org/pypi/Pillow)
-
-Commands
---------
-None
-
-Input
------
-Any list of signals.
-
-Output
-------
-Same list of signals as input, with the added *image* attribute.
-
-***
-
 PILDrawText
 ===========
-
 Draw text to an existing PIL Image
 
 Properties
 ----------
--   cooridinate (type:expression): x, y cooridinate to start text
--   text (type:expression): text to draw to image
+- **coordinate**: x, y cooridinate to start text
+- **text**: text to draw to image
 
-Dependencies
-------------
--   [**Pillow**](https://pypi.python.org/pypi/Pillow)
+Inputs
+------
+- **default**: Any list of signals.
+
+Outputs
+-------
+- **default**: Same list of signals as input.
 
 Commands
 --------
 None
 
-Input
------
-Any list of signals.
+Dependencies
+------------
+-   [**Pillow**](https://pypi.python.org/pypi/Pillow)
 
-Output
-------
-Same list of signals as input.
 
-***
-
-PILOpenFile
+PILNewImage
 ===========
-
-Load and image file from disk and create a new PIL Image and store it in the *image* attribute of the input signal.
+Create a new PIL Image and store it in the *image* attribute of the input signal.
 
 Properties
 ----------
-- None: None
+- **size**: x,y size of new image
 
-Dependencies
-------------
--   [**Pillow**](https://pypi.python.org/pypi/Pillow)
+Inputs
+------
+- **default**: Any list of signals.
+
+Outputs
+-------
+- **default**: Same list of signals as input, with the added *image* attribute.
 
 Commands
 --------
 None
+
+Dependencies
+------------
+-   [**Pillow**](https://pypi.python.org/pypi/Pillow)
 
 Input
 -----
@@ -77,3 +55,27 @@ Any list of signals.
 Output
 ------
 Same list of signals as input, with the added *image* attribute.
+
+PILOpenFile
+===========
+Load and image file from disk and create a new PIL Image and store it in the *image* attribute of the input signal.
+
+Properties
+----------
+- **file**: 
+
+Inputs
+------
+- **default**: Any list of signals.
+
+Outputs
+-------
+- **default**: Same list of signals as input, with the added *image* attribute.
+
+Commands
+--------
+None
+
+Dependencies
+------------
+-   [**Pillow**](https://pypi.python.org/pypi/Pillow)

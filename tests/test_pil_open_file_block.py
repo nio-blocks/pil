@@ -1,10 +1,11 @@
 from PIL import Image
-from collections import defaultdict
 import inspect
 from os.path import join, dirname
+
 from nio.block.terminals import DEFAULT_TERMINAL
 from nio.signal.base import Signal
 from nio.testing.block_test_case import NIOBlockTestCase
+
 from ..pil_open_file_block import PILOpenFile
 
 

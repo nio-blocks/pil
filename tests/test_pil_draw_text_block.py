@@ -1,10 +1,10 @@
-from PIL import Image
-from PIL import ImageFont
-from collections import defaultdict
+from PIL import Image, ImageFont
 from unittest.mock import MagicMock, patch
+
 from nio.block.terminals import DEFAULT_TERMINAL
 from nio.signal.base import Signal
 from nio.testing.block_test_case import NIOBlockTestCase
+
 from ..pil_draw_text_block import PILDrawText
 
 
@@ -39,7 +39,7 @@ class TestPILDrawText(NIOBlockTestCase):
 
     @patch(PILDrawText.__module__ + '.ImageDraw.Draw')
     def test_invalid_text(self, mock_draw):
-        ''' Test that text is converted to string before drawing it '''
+        """ Test that text is converted to string before drawing it """
         mock_draw_obj = MagicMock()
         mock_draw.return_value = mock_draw_obj
         blk = PILDrawText()
@@ -53,7 +53,7 @@ class TestPILDrawText(NIOBlockTestCase):
 
     @patch(PILDrawText.__module__ + '.ImageDraw.Draw')
     def test_signal_without_image_attr(self, mock_draw):
-        ''' Signal passes through the block unmodified '''
+        """ Signal passes through the block unmodified """
         blk = PILDrawText()
         self.configure_block(blk, {})
         blk.start()
@@ -66,7 +66,7 @@ class TestPILDrawText(NIOBlockTestCase):
 
     @patch(PILDrawText.__module__ + '.ImageDraw.Draw')
     def test_signal_without_image_object(self, mock_draw):
-        ''' Signal passes through the block unmodified '''
+        """ Signal passes through the block unmodified """
         blk = PILDrawText()
         self.configure_block(blk, {})
         blk.start()
