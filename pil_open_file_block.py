@@ -8,7 +8,7 @@ class PILOpenFile(Block):
 
     """ Use PIL to open a file and store the Image in a signal """
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.0")
     file = FileProperty(title='Image File', default='niologo.png')
 
     def process_signals(self, signals, input_id='default'):
