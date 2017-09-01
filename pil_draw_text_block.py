@@ -14,7 +14,7 @@ class PILDrawText(Block):
 
     """ Draw text to a PIL Image """
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.0")
     text = Property(title='Text', default='Hello, n.io!')
     coordinate = ObjectProperty(
         Coordinate, default=Coordinate(), title='Coordinate')
