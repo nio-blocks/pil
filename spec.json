@@ -2,6 +2,9 @@
   "nio/PILDrawText": {
     "version": "0.1.0",
     "description": "Draw text to an existing PIL Image",
+    "categories": [
+      "Graphics"
+    ],
     "properties": {
       "coordinate": {
         "title": "Coordinate",
@@ -34,6 +37,9 @@
   "nio/PILNewImage": {
     "version": "0.1.0",
     "description": "Create a new PIL Image and store it in the *image* attribute of the input signal.",
+    "categories": [
+      "Graphics"
+    ],
     "properties": {
       "size": {
         "title": "Size",
@@ -60,6 +66,10 @@
   "nio/PILOpenFile": {
     "version": "0.1.0",
     "description": "Load and image file from disk and create a new PIL Image and store it in the *image* attribute of the input signal.",
+    "categories": [
+      "File System",
+      "Graphics"
+    ],
     "properties": {
       "file": {
         "title": "Image File",
