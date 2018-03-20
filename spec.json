@@ -1,7 +1,7 @@
 {
   "nio/PILDrawText": {
     "version": "0.1.0",
-    "description": "Draw text to an existing PIL Image",
+    "description": "Draw text to an existing Python Image Library (PIL) Image.",
     "categories": [
       "Graphics"
     ],
@@ -9,7 +9,7 @@
       "coordinate": {
         "title": "Coordinate",
         "type": "ObjectType",
-        "description": "x, y cooridinate to start text",
+        "description": "X, Y coordinates to start text.",
         "default": {
           "x": "0",
           "y": "0"
@@ -18,7 +18,7 @@
       "text": {
         "title": "Text",
         "type": "Type",
-        "description": "text to draw to image",
+        "description": "Text to draw to image.",
         "default": "Hello, n.io!"
       }
     },
@@ -36,7 +36,7 @@
   },
   "nio/PILNewImage": {
     "version": "0.1.0",
-    "description": "Create a new PIL Image and store it in the *image* attribute of the input signal.",
+    "description": "Create a new Python Image Library (PIL) Image and store it in the *image* attribute of the input signal.",
     "categories": [
       "Graphics"
     ],
@@ -44,7 +44,7 @@
       "size": {
         "title": "Size",
         "type": "ObjectType",
-        "description": "x,y size of new image",
+        "description": "X, Y size of new image.",
         "default": {
           "x": "64",
           "y": "48"
@@ -65,7 +65,7 @@
   },
   "nio/PILOpenFile": {
     "version": "0.1.0",
-    "description": "Load and image file from disk and create a new PIL Image and store it in the *image* attribute of the input signal.",
+    "description": "Load an image file from disk and create a new Python Image Library (PIL) Image and store it in the *image* attribute of the input signal.",
     "categories": [
       "File System",
       "Graphics"
