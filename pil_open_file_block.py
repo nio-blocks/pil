@@ -13,11 +13,7 @@ class PILOpenFile(Block):
 
     def process_signals(self, signals, input_id='default'):
         for signal in signals:
-            image = self._load_image_file(signal)
-            if True:
-                # TODO: resize image if configured to do so
-                image = image.resize((64, 48), Image.ANTIALIAS)
-            signal.image = image
+            signal.image = self._load_image_file(signal)
         self.notify_signals(signals)
 
     def _load_image_file(self, signal):

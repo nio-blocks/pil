@@ -1,4 +1,63 @@
 {
+  "nio/PILBase64Encode": {
+    "version": "0.1.0",
+    "description": "Convert a PIL image to a base64-encoded string",
+    "categories": [],
+    "properties": {},
+    "inputs": {
+      "default": {
+        "description": "Any list of signals\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (string) base64 representation of the image"
+      }
+    },
+    "commands": {}
+  },
+  "nio/PILCropImage": {
+    "version": "0.1.0",
+    "description": "Crop a PIL image to the specified region",
+    "categories": [],
+    "properties": {
+      "left": {
+        "title": "Left Edge",
+        "type": "IntType",
+        "description": "Pixel offset from left edge of original image",
+        "default": 0
+      },
+      "lower": {
+        "title": "Lower Edge",
+        "type": "IntType",
+        "description": "Pixel offset from bottom edge of original image",
+        "default": "{{ min($image.width, $image.height) }}"
+      },
+      "right": {
+        "title": "Right Edge",
+        "type": "IntType",
+        "description": "Pixel offset from right edge of original image",
+        "default": "{{ min($image.width, $image.height) }}"
+      },
+      "upper": {
+        "title": "Upper Edge",
+        "type": "IntType",
+        "description": "Pixel offset from top edge of original image",
+        "default": 0
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object with size (`right - left`, `lower - upper`)"
+      }
+    },
+    "commands": {}
+  },
   "nio/PILDrawText": {
     "version": "0.1.0",
     "description": "Draw text to an existing Python Image Library (PIL) Image.",
@@ -24,12 +83,12 @@
     },
     "inputs": {
       "default": {
-        "description": "Any list of signals."
+        "description": "Any list of signals\n  - *image* (object) PIL.Image object"
       }
     },
     "outputs": {
       "default": {
-        "description": "Same list of signals as input."
+        "description": "Same list of signals as input.\n  - *image* (object) original image with text added."
       }
     },
     "commands": {}
@@ -58,7 +117,7 @@
     },
     "outputs": {
       "default": {
-        "description": "Same list of signals as input, with the added *image* attribute."
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object"
       }
     },
     "commands": {}
@@ -85,7 +144,61 @@
     },
     "outputs": {
       "default": {
-        "description": "Same list of signals as input, with the added *image* attribute."
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "commands": {}
+  },
+  "nio/PILResizeImage": {
+    "version": "0.1.0",
+    "description": "Resize a PIL image to the specified dimensions",
+    "categories": [],
+    "properties": {
+      "x": {
+        "title": "Width",
+        "type": "IntType",
+        "description": "Output image width, in pixels",
+        "default": "{{ $image.width * 0.5 }}"
+      },
+      "y": {
+        "title": "Height",
+        "type": "IntType",
+        "description": "Output image height, in pixels",
+        "default": "{{ $image.height * 0.5 }}"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object with size (`x`, `y`)"
+      }
+    },
+    "commands": {}
+  },
+  "nio/PILSaveImage": {
+    "version": "0.1.0",
+    "description": "Save a PIL image object to disk in the specified format",
+    "categories": [],
+    "properties": {
+      "file": {
+        "title": "Image File",
+        "type": "FileType",
+        "description": "Path to save image file. The file extension specifies format.",
+        "default": "my_image.jpg"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object"
       }
     },
     "commands": {}
