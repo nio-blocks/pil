@@ -102,6 +102,29 @@ Dependencies
 
 ***
 
+PILImageFromArray
+=================
+Convert an array to a PIL.Image object
+
+Properties
+----------
+- **input_array**: An image stored in an array-like object
+
+Inputs
+------
+- **default**: Any list of signals
+
+Outputs
+-------
+- **default**: Same list of signals as input.
+  - *image* (object) PIL.Image object
+
+Commands
+--------
+None
+
+***
+
 PILNewImage
 ===========
 Create a new Python Image Library (PIL) Image and store it in the *image* attribute of the input signal.

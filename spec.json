@@ -110,6 +110,30 @@
     },
     "commands": {}
   },
+  "nio/PILImageFromArray": {
+    "version": "0.1.0",
+    "description": "Convert an array to a PIL.Image object",
+    "categories": [],
+    "properties": {
+      "input_array": {
+        "title": "Array to Convert",
+        "type": "Type",
+        "description": "An image stored in an array-like object",
+        "default": "{{ $image }}"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "commands": {}
+  },
   "nio/PILNewImage": {
     "version": "0.1.0",
     "description": "Create a new Python Image Library (PIL) Image and store it in the *image* attribute of the input signal.",
