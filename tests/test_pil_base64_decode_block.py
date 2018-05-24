@@ -10,13 +10,17 @@ from ..pil_base64_decode_block import PILBase64Decode
 class TestPILBase64Decode(NIOBlockTestCase):
 
     @patch(PILBase64Decode.__module__ + '.b64decode')
-    def test_notified_signals(self, mock_b64decode):
+    @patch(PILBase64Decode.__module__ + '.Image')
+    def test_notified_signals(self, mock_Image, mock_b64decode):
         image_string = 'base64stringgoeshere'
-        mock_b64decode.return_value = 'foo'
+        mock_bytes = mock_b64decode.return_value = MagicMock()
+        mock_image_obj = mock_Image.frombytes.return_value = MagicMock()
         blk = PILBase64Decode()
         self.configure_block(blk, {})
         blk.start()
         blk.process_signals([Signal({'image': image_string})])
         blk.stop()
         mock_b64decode.assert_called_once_with(image_string)
-        self.assertEqual(self.last_notified[DEFAULT_TERMINAL][0].image, 'foo')
+        mock_Image.frombytes.assert_called_once_with(mock_bytes)
+        self.assertEqual(self.last_notified[DEFAULT_TERMINAL][0].image,
+                         mock_image_obj)
