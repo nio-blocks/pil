@@ -13,7 +13,5 @@ class PILImageFromArray(Block):
 
     def process_signals(self, signals, input_id='default'):
         for signal in signals:
-            input = self.input_array(signal)
-            converted_image = Image.fromarray(input)
-            signal.image = converted_image
+            signal.image = Image.fromarray(self.input_array(signal))
         self.notify_signals(signals)
