@@ -6,7 +6,7 @@ from nio.properties import VersionProperty
 
 class PILBase64Decode(Block):
 
-    """ Convert a PIL image to a base64-encoded string """
+    """ Convert a base64-encoded string to a PIL Image """
 
     version = VersionProperty('0.1.0')
 
