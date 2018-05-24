@@ -1,4 +1,21 @@
 {
+  "nio/PILBase64Decode": {
+    "version": "0.1.0",
+    "description": "Decode a base64-encoded string to a PIL.Image object",
+    "categories": [],
+    "properties": {},
+    "inputs": {
+      "default": {
+        "description": "Any list of signals\n  - *image* (string) base64 representation of the image"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "commands": {}
+  },
   "nio/PILBase64Encode": {
     "version": "0.1.0",
     "description": "Convert a PIL image to a base64-encoded string",

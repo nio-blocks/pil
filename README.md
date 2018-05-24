@@ -1,3 +1,27 @@
+PILBase64Decode
+===============
+Decode a base64-encoded string to a PIL.Image object
+
+Properties
+----------
+None
+
+Inputs
+------
+- **default**: Any list of signals
+  - *image* (string) base64 representation of the image
+
+Outputs
+-------
+- **default**: Same list of signals as input.
+  - *image* (object) PIL.Image object
+
+Commands
+--------
+None
+
+***
+
 PILBase64Encode
 ===============
 Convert a PIL image to a base64-encoded string
