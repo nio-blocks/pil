@@ -1,8 +1,29 @@
 {
+  "nio/PILBase64Decode": {
+    "version": "0.1.0",
+    "description": "Decode a base64-encoded string to a PIL.Image object",
+    "categories": [
+      "Graphics"
+    ],
+    "properties": {},
+    "inputs": {
+      "default": {
+        "description": "Any list of signals\n  - *image* (string) base64 representation of the image"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "commands": {}
+  },
   "nio/PILBase64Encode": {
     "version": "0.1.0",
     "description": "Convert a PIL image to a base64-encoded string",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {},
     "inputs": {
       "default": {
@@ -19,7 +40,9 @@
   "nio/PILCropImage": {
     "version": "0.1.0",
     "description": "Crop a PIL image to the specified region",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {
       "left": {
         "title": "Left Edge",
@@ -93,6 +116,32 @@
     },
     "commands": {}
   },
+  "nio/PILImageFromArray": {
+    "version": "0.1.0",
+    "description": "Convert an array to a PIL.Image object",
+    "categories": [
+      "Graphics"
+    ],
+    "properties": {
+      "input_array": {
+        "title": "Array to Convert",
+        "type": "Type",
+        "description": "An image stored in an array-like object",
+        "default": "{{ $image }}"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "commands": {}
+  },
   "nio/PILNewImage": {
     "version": "0.1.0",
     "description": "Create a new Python Image Library (PIL) Image and store it in the *image* attribute of the input signal.",
@@ -152,7 +201,9 @@
   "nio/PILResizeImage": {
     "version": "0.1.0",
     "description": "Resize a PIL image to the specified dimensions",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {
       "x": {
         "title": "Width",
@@ -182,7 +233,10 @@
   "nio/PILSaveImage": {
     "version": "0.1.0",
     "description": "Save a PIL image object to disk in the specified format",
-    "categories": [],
+    "categories": [
+      "File System",
+      "Graphics"
+    ],
     "properties": {
       "file": {
         "title": "Image File",
