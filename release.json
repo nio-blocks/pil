@@ -1,5 +1,25 @@
 {
+  "nio/PILBase64Decode": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/pil.git",
+    "version": "0.1.0"
+  },
+  "nio/PILBase64Encode": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/pil.git",
+    "version": "0.1.0"
+  },
+  "nio/PILCropImage": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/pil.git",
+    "version": "0.1.0"
+  },
   "nio/PILDrawText": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/pil.git",
+    "version": "0.1.0"
+  },
+  "nio/PILImageFromArray": {
     "language": "Python",
     "url": "git://github.com/nio-blocks/pil.git",
     "version": "0.1.0"
@@ -10,6 +30,16 @@
     "version": "0.1.0"
   },
   "nio/PILOpenFile": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/pil.git",
+    "version": "0.1.0"
+  },
+  "nio/PILResizeImage": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/pil.git",
+    "version": "0.1.0"
+  },
+  "nio/PILSaveImage": {
     "language": "Python",
     "url": "git://github.com/nio-blocks/pil.git",
     "version": "0.1.0"
