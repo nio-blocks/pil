@@ -2,7 +2,9 @@
   "nio/PILBase64Decode": {
     "version": "0.1.0",
     "description": "Decode a base64-encoded string to a PIL.Image object",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {},
     "inputs": {
       "default": {
@@ -19,7 +21,9 @@
   "nio/PILBase64Encode": {
     "version": "0.1.0",
     "description": "Convert a PIL image to a base64-encoded string",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {},
     "inputs": {
       "default": {
@@ -36,7 +40,9 @@
   "nio/PILCropImage": {
     "version": "0.1.0",
     "description": "Crop a PIL image to the specified region",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {
       "left": {
         "title": "Left Edge",
@@ -113,7 +119,9 @@
   "nio/PILImageFromArray": {
     "version": "0.1.0",
     "description": "Convert an array to a PIL.Image object",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {
       "input_array": {
         "title": "Array to Convert",
@@ -193,7 +201,9 @@
   "nio/PILResizeImage": {
     "version": "0.1.0",
     "description": "Resize a PIL image to the specified dimensions",
-    "categories": [],
+    "categories": [
+      "Graphics"
+    ],
     "properties": {
       "x": {
         "title": "Width",
@@ -223,7 +233,10 @@
   "nio/PILSaveImage": {
     "version": "0.1.0",
     "description": "Save a PIL image object to disk in the specified format",
-    "categories": [],
+    "categories": [
+      "File System",
+      "Graphics"
+    ],
     "properties": {
       "file": {
         "title": "Image File",
