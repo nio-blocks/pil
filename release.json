@@ -24,6 +24,11 @@
     "url": "git://github.com/nio-blocks/pil.git",
     "version": "0.1.0"
   },
+  "nio/PILImageToArray": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/pil.git",
+    "version": "0.1.0"
+  },
   "nio/PILNewImage": {
     "language": "Python",
     "url": "git://github.com/nio-blocks/pil.git",
