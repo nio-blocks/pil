@@ -125,6 +125,30 @@ None
 
 ***
 
+PILImageToArray
+===============
+Convert an image to a numpy.ndarray
+
+Properties
+----------
+None
+
+Inputs
+------
+- **default**: Any list of signals
+  - *image* (object) PIL.Image object, nested sequence, or any array-like object
+
+Outputs
+-------
+- **default**: Same list of signals as input.
+  - *image* (object) array representation of input object
+
+Commands
+--------
+None
+
+***
+
 PILNewImage
 ===========
 Create a new Python Image Library (PIL) Image and store it in the *image* attribute of the input signal.
