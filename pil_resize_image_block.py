@@ -6,7 +6,7 @@ class PILResizeImage(Block):
 
     """ Resize a PIL image to the specified dimensions """
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.0")
     x = IntProperty(title='Width', default='{{ $image.width * 0.5 }}')
     y = IntProperty(title='Height', default='{{ $image.height * 0.5 }}')
 
