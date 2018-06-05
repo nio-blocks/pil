@@ -6,7 +6,7 @@ class PILCropImage(Block):
 
     """ Crop a PIL image to the specified region """
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.0")
     left = IntProperty(title='Left Edge', default=0)
     upper = IntProperty(title='Upper Edge', default=0)
     right = IntProperty(title='Right Edge',
