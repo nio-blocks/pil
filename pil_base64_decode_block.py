@@ -9,7 +9,7 @@ class PILBase64Decode(Block):
 
     """ Convert a base64-encoded string to a PIL Image """
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.0")
 
     def __init__(self):
         super().__init__()
