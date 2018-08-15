@@ -22,5 +22,5 @@ class TestPILOpenFile(NIOBlockTestCase):
         self.assert_num_signals_notified(1)
         self.assertEqual(['image'], list(
             self.last_notified[DEFAULT_TERMINAL][0].to_dict().keys()))
-        self.assertEqual(Image.Image,
-                         type(self.last_notified[DEFAULT_TERMINAL][0].image))
+        image_type = type(self.last_notified[DEFAULT_TERMINAL][0].image)
+        self.assertTrue(issubclass(image_type, Image.Image))

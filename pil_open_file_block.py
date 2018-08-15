@@ -18,6 +18,6 @@ class PILOpenFile(Block):
 
     def _load_image_file(self, signal):
         try:
-            return Image.open(self.file(signal).file).convert('1')
+            return Image.open(self.file(signal).file)
         except:
             self.logger.exception('Failed to get file from signal')
