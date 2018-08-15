@@ -24,6 +24,8 @@ class TestPILNewImage(NIOBlockTestCase):
                          type(self.last_notified[DEFAULT_TERMINAL][0].image))
         self.assertEqual((64, 48),
                          self.last_notified[DEFAULT_TERMINAL][0].image.size)
+        self.assertEqual('RGB',
+                         self.last_notified[DEFAULT_TERMINAL][0].image.mode)
 
     def test_size_prop(self):
         """Create a black and white image of configured size 1x48"""
