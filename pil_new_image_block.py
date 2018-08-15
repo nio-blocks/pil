@@ -1,8 +1,15 @@
+from enum import Enum
 from PIL import Image
 
 from nio.block.base import Block
 from nio.properties import IntProperty, VersionProperty, \
-        ObjectProperty, PropertyHolder
+        ObjectProperty, PropertyHolder, SelectProperty
+
+
+class Mode(Enum):
+    RGB = 'RGB'
+    RGBA = 'RGBA'
+    BW = 'L'
 
 
 class Size(PropertyHolder):
@@ -16,6 +23,7 @@ class PILNewImage(Block):
 
     version = VersionProperty('0.1.0')
     size = ObjectProperty(Size, default=Size(), title='Size')
+    mode = SelectProperty(Mode, default=Mode.RGB, title='Image Mode')
 
     def process_signals(self, signals, input_id='default'):
         for signal in signals:
@@ -27,7 +35,7 @@ class PILNewImage(Block):
 
     def _create_image(self, signal):
         x, y = self._image_size(signal)
-        image = Image.new('1', (x, y))
+        image = Image.new(self.mode().value, (x, y))
         signal.image = image
 
     def _image_size(self, signal):
