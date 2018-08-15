@@ -7,12 +7,14 @@ class PILCropImage(Block):
     """ Crop a PIL image to the specified region """
 
     version = VersionProperty("0.1.0")
-    left = IntProperty(title='Left Edge', default=0)
-    upper = IntProperty(title='Upper Edge', default=0)
+    left = IntProperty(title='Left Edge', default=0, order=0)
+    upper = IntProperty(title='Upper Edge', default=0, order=1)
     right = IntProperty(title='Right Edge',
-                        default='{{ min($image.width, $image.height) }}')
+                        default='{{ min($image.width, $image.height) }}',
+                        order=2)
     lower = IntProperty(title='Lower Edge',
-                        default='{{ min($image.width, $image.height) }}')
+                        default='{{ min($image.width, $image.height) }}',
+                        order=3)
 
     def process_signals(self, signals, input_id='default'):
         for signal in signals:
