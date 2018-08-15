@@ -168,6 +168,12 @@
       "Graphics"
     ],
     "properties": {
+      "mode": {
+        "title": "Image Mode",
+        "type": "SelectType",
+        "description": "Select color mode for the image, one of RGB (3-channel color), RGB with Alpha, or Monochrome.",
+        "default": "RGB"
+      },
       "size": {
         "title": "Size",
         "type": "ObjectType",
