@@ -16,6 +16,9 @@ class PILBase64Encode(Block):
 
     def process_signals(self, signals, input_id='default'):
         for signal in signals:
+            if signal.image.mode == 'RGBA':
+                # JPEG cannot represent Alpha channel, convert it
+                signal.image = signal.image.convert('RGB')
             frame_buffer = BytesIO()
             signal.image.save(frame_buffer, format='JPEG')
             signal.image = b64encode(frame_buffer.getvalue())
