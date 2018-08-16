@@ -155,6 +155,7 @@ Create a new Python Image Library (PIL) Image and store it in the *image* attrib
 
 Properties
 ----------
+- **mode**: Select color mode for the image, one of RGB (3-channel color), RGB with Alpha, or Monochrome.
 - **size**: X, Y size of new image.
 
 Inputs
