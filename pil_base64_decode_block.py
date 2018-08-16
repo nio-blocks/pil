@@ -1,4 +1,5 @@
 from base64 import b64decode
+from io import BytesIO
 from PIL import Image
 
 from nio.block.base import Block
@@ -17,5 +18,6 @@ class PILBase64Decode(Block):
     def process_signals(self, signals, input_id='default'):
         for signal in signals:
             decoded = b64decode(signal.image)
-            signal.image = Image.frombytes(decoded)
+            buffer = BytesIO(decoded)
+            signal.image = Image.open(buffer)
         self.notify_signals(signals)
