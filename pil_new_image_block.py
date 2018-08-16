@@ -21,7 +21,7 @@ class PILNewImage(Block):
 
     """ Use PIL to create a new Image and store the Image in a signal """
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.2.0")
     size = ObjectProperty(Size, default=Size(), title='Size')
     mode = SelectProperty(Mode, default=Mode.RGB, title='Image Mode')
 

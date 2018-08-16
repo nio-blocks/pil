@@ -162,7 +162,7 @@
     "commands": {}
   },
   "nio/PILNewImage": {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Create a new Python Image Library (PIL) Image and store it in the *image* attribute of the input signal.",
     "categories": [
       "Graphics"
