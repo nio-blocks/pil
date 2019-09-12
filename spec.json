@@ -37,6 +37,56 @@
     },
     "commands": {}
   },
+  "nio/PILBlurRegion": {
+    "version": "0.1.0",
+    "description": "Apply Gaussian blur to a region specified by its left, upper, right, and lower edges.",
+    "categories": [
+      "Graphics"
+    ],
+    "properties": {
+      "blur": {
+        "title": "Blur Radius",
+        "type": "IntType",
+        "description": "Gaussian blur radius",
+        "default": 2
+      },
+      "left": {
+        "title": "Left Edge",
+        "type": "IntType",
+        "description": "Pixel offset from left edge of original image",
+        "default": 0
+      },
+      "lower": {
+        "title": "Lower Edge",
+        "type": "IntType",
+        "description": "Pixel offset from bottom edge of original image",
+        "default": 0
+      },
+      "right": {
+        "title": "Right Edge",
+        "type": "IntType",
+        "description": "Pixel offset from right edge of original image",
+        "default": 0
+      },
+      "upper": {
+        "title": "Upper Edge",
+        "type": "IntType",
+        "description": "Pixel offset from top edge of original image",
+        "default": 0
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals\n  - *image* (object) PIL.Image object"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input.\n  - *image* (string) with the specified region blurred out"
+      }
+    },
+    "commands": {}
+  },
   "nio/PILCropImage": {
     "version": "0.1.0",
     "description": "Crop a PIL image to the specified region",
